@@ -8,11 +8,13 @@ import { ElectricBilll } from '../../providers/ElectricBillProvider'
 import { Chart, registerables } from "chart.js"
 import { Bar } from "react-chartjs-2"
 import { Box, Heading, Text } from '@chakra-ui/react';
-import { Center, Flex, Stack, Image,  Modal, ModalOverlay, ModalContent, useDisclosure, ModalHeader, ModalCloseButton, ModalBody, Button} from '@chakra-ui/react';
+import { Center, Flex, Stack, Image, useDisclosure, Button} from '@chakra-ui/react';
 
 import  money from '../../images/Money.png'
 import { PrimaryButton } from '../atoms/button/PrimaryButton';
 import { useHistory } from 'react-router-dom';
+import { LedModal } from '../organisms/Mordal/LedModal';
+import { ModalButton } from '../atoms/button/ModalButton';
 
 Chart.register(...registerables)
 
@@ -37,6 +39,14 @@ export const Led = memo(() => {
                 setPower(4)
             }
     }, [])
+
+    const onClick20 = () => {
+        setPower(9)
+    }
+
+    const onClick40 =() => {
+        setPower(18)
+    }
 
 
     const led = Math.round(power*hour*period*price*quanity/1000)
@@ -78,46 +88,63 @@ export const Led = memo(() => {
         <Box ml="auto" mr="auto" mt={5}>
             <Heading as="h1" size="lg" textAlign="center">LED照明交換すると...</Heading>
         </Box>
-        <Box mt="5%">
-            <Flex>
-                <Box w="50%" pt={50}>
-                    <Box w="80%" ml="auto" mr="auto">
+        <Box mt="2%" textAlign="center">
+            <Button mr={1} color="teal.400" onClick={onClick20}>蛍光灯20形</Button>
+            <Button ml={1} color="teal.400" onClick={onClick40}>蛍光灯40形</Button>
+        </Box>
+        <Box>
+            <Flex display={{base: "block", md: "block", lg: "flex"}} >
+                <Box w={{base: "100%", md: "100%", lg: "50%"}} display={{base: 'block', md: 'block', lg: "none"}}>
+                    <Flex justifyContent="center">
+                        <Heading as="h1" fontSize={{base: "40px", md: "70px", lg: "100px"}} color="#EECD1D"  mt={{base: 3, md: 50}}>{(Math.round(electric - led)).toLocaleString()}</Heading>
+                        <Heading as="h1" fontSize={{base: "40px", md: "70px", lg: "100px"}} mt={{base: 3, md: 50}}>円</Heading>
+                    </Flex>
+                    <Box>
+                        <Heading  textAlign="center" fontSize={{base: "40px", md: "70px", lg: "100px"}}>DOWN</Heading>
+                    </Box>
+                </Box>
+                <Box w={{base: "100%", md: "100%", lg: "50%"}} pt={50} mb={{base:10, md: 0}}>
+                    <Box w={{base: "100%", md: "80%"}} ml="auto" mr="auto">
                         <Bar data={data}/>
                     </Box>
-                    <Box mt={100} ml="40%">
-                        <Stack spacing={30}>
+                    <Box mt={{base: 30, md: 50, lg: 100}} ml={{base: "20%", md: "40%"}}>
+                        <Stack spacing={{base:15, md: 30}}>
                             <Box>
-                                <Flex>
-                                    <Center w='40px' h='40px' bg='#C58181' color='white'>
+                                <Flex alignItems="center">
+                                    <Center w={{base: "20px", md: '40px'}} h={{base: "20px", md: '40px'}} bg='#C58181' color='white'>
                                     </Center>
                                     <Box ml={5}>
-                                        <Text fontSize="30px">{(Math.round(electric)).toLocaleString()}円</Text>
+                                        <Text fontSize={{base: "20px", md: "30px"}}>{(Math.round(electric)).toLocaleString()}円</Text>
                                     </Box>
                                 </Flex>
                             </Box>
                             <Box>
-                                <Flex>
-                                    <Center w='40px' h='40px' bg='#81C5BD' color='white'>
+                                <Flex alignItems="center">
+                                    <Center w={{base: "20px", md: '40px'}} h={{base: "20px", md: '40px'}} bg='#81C5BD' color='white'>
                                     </Center>
                                     <Box ml={5}>
-                                        <Text fontSize="30px">{(led).toLocaleString()}円</Text>
+                                        <Text fontSize={{base: "20px", md: "30px"}}>{(led).toLocaleString()}円</Text>
                                     </Box>
                                 </Flex>
-                                <Box mt={30} ml={-50} >
-                                    <Button onClick={onClickSite} bg="yellow.400" color="white" mr={50}>仮LED選定</Button>
-                                    <PrimaryButton onClick={onCkickResult}>1ヶ月の場合に戻る</PrimaryButton>
-                                </Box>
                             </Box>
                         </Stack>
                     </Box>
+                    <Box mt={30} textAlign="center">
+                        <Box>
+                            <PrimaryButton onClick={onCkickResult}>1ヶ月の場合に戻る</PrimaryButton>
+                        </Box>
+                        <Box mt={30}>
+                            <ModalButton onClick={onClickSite}>LED選定詳細はこちら</ModalButton>
+                        </Box>
+                    </Box>
                 </Box>
-                <Box w="50%">
+                <Box w={{base: "100%", md: "50%"}} display={{base: 'none', md: 'none', lg: "block"}}>
                     <Flex>
-                        <Heading as="h1" fontSize="100px" color="#EECD1D" ml={100} mt={50}>{(Math.round(electric - led)).toLocaleString()}</Heading>
-                        <Heading as="h1" fontSize="100px" mt={50}>円</Heading>
+                        <Heading as="h1" fontSize={{base: "70px", md: "100px"}} color="#EECD1D" ml={100} mt={50}>{(Math.round(electric - led)).toLocaleString()}</Heading>
+                        <Heading as="h1" fontSize={{base: "70px", md: "100px"}} mt={50}>円</Heading>
                     </Flex>
                     <Box>
-                        <Heading ml={100} fontSize="100px">DOWN</Heading>
+                        <Heading ml={100} fontSize={{base: "70px", md: "100px"}}>DOWN</Heading>
                     </Box>
                     <Box mt={-50}>
                         <Image src={money} boxSize='600px'/>
@@ -125,35 +152,7 @@ export const Led = memo(() => {
                 </Box>
             </Flex>
         </Box>
-        <Modal isOpen={isOpen} onClose={onClose} size='xl' autoFocus={false}>
-            <ModalOverlay />
-            <ModalContent>
-                <ModalHeader textAlign="center">LED選定詳細</ModalHeader>
-                <ModalCloseButton />
-                <ModalBody mx={2} my={6}>
-                    <Flex position="container">
-                        <Stack spacing={10} w="65%">
-                            <Box>
-                                白熱電球 100W → LED 12.5W
-                            </Box>
-                            <Box>
-                                白熱電球 60W → LED 4.9W
-                            </Box>
-                            <Box>
-                                白熱電球 40W → LED 4W
-                            </Box>
-                        </Stack>
-                        <Box w="35%" position="absolute" bottom="100px" right="10px">
-                            <Image src={money} />
-                        </Box>
-                    </Flex>
-                    <Box textAlign="center" mt={20}>
-                        <Text>※選定に関しての注意事項</Text>
-                        <Text>某大手メーカのホームページより選定させていただいています</Text>
-                    </Box>
-                </ModalBody>
-            </ModalContent>
-        </Modal>
+        <LedModal isOpen={isOpen} onClose={onClose}/>
         </>
     )
 })

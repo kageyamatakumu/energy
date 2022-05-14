@@ -18,23 +18,23 @@ export const Result = memo(() => {
 
     return (
         <>
-            <Box mt={100} textAlign="center">
+            <Box mt={{base: 5, md: 50, lg: 100}} textAlign="center">
                 <Box>
-                    <Heading fontSize='6xl'>電気代</Heading>
+                    <Heading as="h1" fontSize={{base: "lg", md: "6xl"}}>電気代</Heading>
                 </Box>
-                <Box mt={50}>
-                    <Heading color="#C58181" fontSize='6xl' >{Result.toLocaleString()}円</Heading>
+                <Box mt={{base: 5, md: 50}}>
+                    <Heading color="#C58181" fontSize={{base: "3xl", md: "6xl"}} >{Result.toLocaleString()}円</Heading>
                 </Box>
             </Box>
             <Box>
-                <Flex justifyContent="center" mt={50} fontWeight='bold'>
-                    <Box color='teal.700' fontSize='4xl'>
+                <Flex justifyContent="center" mt={50} fontWeight='bold' display={{base: "block", md: "flex"}} textAlign={{base: "center"}}>
+                    <Box color='teal.700' fontSize={{base: "lg", md:'4xl'}}>
                         <Link to="/result">1ヶ月の場合</Link>
                     </Box>
-                    <Box mr={50} ml={50} color='teal.400' fontSize='4xl' fontWeight='bold'>
+                    <Box mr={{base: 0, md: 50}} ml={{base: 0, md: 50}} my={{base: 5, md: 0}} color='teal.400' fontSize={{base: "lg", md:'4xl'}} fontWeight='bold'>
                         <Link to="/result/harf" >6ヶ月の場合</Link>
                     </Box>
-                    <Box color='teal.400' fontSize='4xl' fontWeight='bold'>
+                    <Box color='teal.400' fontSize={{base: "lg", md:'4xl'}} fontWeight='bold'>
                         <Link to="/result/one_year">1年間の場合</Link>
                     </Box>
                 </Flex>

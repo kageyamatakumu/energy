@@ -2,7 +2,7 @@ import { Box, Drawer, DrawerBody, DrawerContent, DrawerOverlay, Link } from '@ch
 import React, { memo } from 'react'
 
 export const MenuDrawer = memo((props) => {
-    const { onClose, isOpen, onClickElectrc, onClickTop, onClickProfile } = props;
+    const { onClose, isOpen, onClickTop} = props;
 
     return (
         <Drawer placement="left" size="xs" onClose={onClose} isOpen={isOpen} >
@@ -11,12 +11,6 @@ export const MenuDrawer = memo((props) => {
                     <DrawerBody p={0} bg="gray.100">
                         <Box w="100%" textAlign="center" mt={30}>
                             <Link onClick={onClickTop}>TOP</Link>
-                        </Box>
-                        <Box w="100%" textAlign="center" mt={30}>
-                            <Link onClick={onClickProfile}>プロフィール</Link>
-                        </Box>
-                        <Box w="100%" textAlign="center" mt={30}>
-                            <Link onClick={onClickElectrc}>登録している電気料金</Link>
                         </Box>
                     </DrawerBody>
                 </DrawerContent>
