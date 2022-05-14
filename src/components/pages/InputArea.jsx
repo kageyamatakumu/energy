@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Flex, Heading, Input, Stack, Select, Text, Image } from '@chakra-ui/react'
+import { Box, Flex, Heading, Input, Stack, Select, Text, Image } from '@chakra-ui/react'
 import {
     NumberInput,
     NumberInputField,
@@ -83,9 +83,9 @@ export const InputArea = () => {
             <Box ml="auto" mr="auto" mt={5}>
                 <Heading as="h1" size="lg" textAlign="center">電気代・電気料金の計算</Heading>
             </Box>
-            <Flex>
-                <Box w="lg" p={4} ml="20%" mt="5%">
-                    <Stack spacing={10}>
+            <Flex display={{ base: "block", md: "flex" }}>
+                <Box w={{base: "100%", md: "lg"}} p={4} ml={{base: "none", md: "20%"}} mt="5%">
+                    <Stack spacing={{base: 4, md: 7, lg: 10}}>
                         <FormControl isRequired>
                             <FormLabel htmlFor='first-name'>消費電力(W) 電球１個あたり</FormLabel>
                                 <Input placeholder="消費電力(W) 電球１個あたり" type="number" onChange={handleChangeW} />
@@ -143,7 +143,7 @@ export const InputArea = () => {
                     </Stack>
                 </Box>
                 <Box position="container" >
-                    <Image src={lite} boxSize='300px' position="absolute" ml="100px" bottom={10}/>
+                    <Image src={lite} display={{base: "none", md: "none", lg: "flex"}} boxSize={'300px'} position="absolute" ml={"100px"} bottom={10}/>
                 </Box>
             </Flex>
         </>
