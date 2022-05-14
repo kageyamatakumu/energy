@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# 電気代下げ下げ(サイト名)
 
-In the project directory, you can run:
+## サービス概要
+- ５つの項目を埋めるだけで照明にかかる電気代を表示でき、仮にLED照明に変えた場合の電気代の変化が確認できるサービスです。
 
-### `npm start`
+## メインターゲット
+- 照明に電気代がどれだけかかっているのか気になる人
+- LED照明に変える意味があるのか疑問を持っている人
+- 照明を利用して電気代を毎月支払っている人
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ユーザーが抱える課題
+- 世界情勢の影響を受け、電気料金の価格高騰が僕たちの生活は厳しくしていること
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 解決方法
+- 照明のみにかかる電気代を把握する。
+- 照明のみにかかる電気料金は何に影響を受けているのか把握する。（時間、電力単価、消費電力など）
+- 消費電力を下げるためにLED照明は有効なのか考えるきっかけになる。
 
-### `npm test`
+## なぜこのサービスを作りたいのか
+前職で新規開拓営業を行っており、空調・厨房機器・トイレなど店舗設備に関するあらゆる商材を提案してきました。
+商材の中にはLED照明もありました。
+LED照明は導入すれば電気代が大きく下げることができるので、お客様の財布に大きなお金を残すことができます。
+導入しない理由がないほど本当に優れたものだと感じています。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+そんなLED照明の提案には電気代の計算は必須です。
+前職ではその計算を紙とペン、電卓で計算したり、会社に持ち帰ってエクセルで計算した結果を
+後日お客様に提示していました。それでは受注まで時間がかかりすぎると考えていました。
 
-### `npm run build`
+そこで、携帯、パソコン１つですぐに計算結果が出るものを作成したいと考えてできたのがこのサービスです。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
