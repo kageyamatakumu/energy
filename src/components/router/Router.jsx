@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { InputArea } from '../pages/InputArea'
 import { Led } from '../pages/Led'
+import { Page404 } from '../pages/Page404'
 import { Result } from '../pages/Result'
 import { ResultHarf } from '../pages/ResultHarf'
 import { ResultOneYear } from '../pages/ResultOneYear'
@@ -30,8 +31,14 @@ export const Router = memo(() => {
                     <Route  path={`${url}/led`}>
                         <Led />
                     </Route>
+                    <Route path={`${url}/*`}>
+                        <Page404 />
+                    </Route>
                 </Switch>
             )} />
+            <Route path="*">
+                <Page404 />
+            </Route>
         </Switch>
     )
 })
