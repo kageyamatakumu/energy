@@ -12,8 +12,7 @@ export const Header = memo(() => {
     const history = useHistory()
 
     const onClickTop = useCallback(() => { history.push('/') }, [])
-    const onClickProfile = useCallback(() => { alert('Profile')}, [])
-    const onClickElectrc = useCallback(() => { alert('Electrc')}, [])
+
     return (
         <>
         <Flex as="nav" bg="teal.500" color="gray.50" align="center" justify="space-between" padding={{ base: 3, md: 5}} >
@@ -24,19 +23,14 @@ export const Header = memo(() => {
             </Flex>
             <Flex align="center" fontSize="sm" display={{ base: "none", md: "flex" }} >
                 <Box pr={4}>
-                    <Link onClick={onClickProfile}>
-                        プロフィール
-                    </Link>
-                </Box>
-                <Box>
-                    <Link onClick={onClickElectrc}>
-                        登録している電気料金
+                    <Link onClick={onClickTop}>
+                        TOPに戻る
                     </Link>
                 </Box>
             </Flex>
             <MenuIconButton onOpen={onOpen}/>
         </Flex>
-        <MenuDrawer isOpen={isOpen} onClose={onClose} onClickTop={onClickTop} onClickProfile={onClickProfile} onClickElectrc={onClickElectrc}/>
+        <MenuDrawer isOpen={isOpen} onClose={onClose} onClickTop={onClickTop} />
         </>
     )
 })

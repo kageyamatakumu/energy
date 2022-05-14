@@ -89,8 +89,8 @@ export const Led = memo(() => {
             <Heading as="h1" size="lg" textAlign="center">LED照明交換すると...</Heading>
         </Box>
         <Box mt="2%" textAlign="center">
-            <Button mr={1} color="teal.400" onClick={onClick20}>蛍光灯20形</Button>
-            <Button ml={1} color="teal.400" onClick={onClick40}>蛍光灯40形</Button>
+            <Button mr={1} color="teal.400" onClick={onClick20}>蛍光灯20形(蛍光灯の結果はこちら)</Button>
+            <Button ml={1} color="teal.400" onClick={onClick40}>蛍光灯40形(蛍光灯の結果はこちら)</Button>
         </Box>
         <Box>
             <Flex display={{base: "block", md: "block", lg: "flex"}} >
