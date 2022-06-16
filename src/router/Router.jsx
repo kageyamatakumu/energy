@@ -1,12 +1,12 @@
 import React, { memo } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { InputArea } from '../pages/InputArea'
-import { Led } from '../pages/Led'
-import { Page404 } from '../pages/Page404'
-import { Result } from '../pages/Result'
-import { ResultHarf } from '../pages/ResultHarf'
-import { ResultOneYear } from '../pages/ResultOneYear'
-import { Top } from '../pages/Top'
+import { InputArea } from '../components/pages/InputArea'
+import { Led } from '../components/pages/Led'
+import { Page404 } from '../components/pages/Page404'
+import { Result } from '../components/pages/Result'
+import { ResultHarf } from '../components/pages/ResultHarf'
+import { ResultOneYear } from '../components/pages/ResultOneYear'
+import { Top } from '../components/pages/Top'
 
 export const Router = memo(() => {
     return (

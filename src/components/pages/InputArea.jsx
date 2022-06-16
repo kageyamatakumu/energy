@@ -47,36 +47,36 @@ export const InputArea = () => {
     const [consumption, setConsumption] = useState('')
     const handleChangeW = (e) => {
         setConsumption(() => e.target.value)
-        console.log(consumption);
     }
 
     // 電力会社
     const [company, setCompany] = useState('')
     const handleChangeCompany = (e) => {
         setCompany(() => e.target.value)
-        console.log(company);
+        setDisable(false)
+        console.log(disable)
     }
 
     // 使用日数（日/月）
     const [day, setDay] = useState(1)
     const handleChangeDay = (value) => {
         setDay(value)
-        console.log(day)
     }
 
     // 1日の使用時間（時間）
     const [time, setTime] = useState(1)
-    const handleChange2 = (value) => {
+    const handleChangeTime = (value) => {
         setTime(value)
-        console.log(time)
     }
 
     // 個数
     const [thing, setThing] = useState(1)
     const handleChangeThing = (value) => {
         setThing(value)
-        console.log(thing)
     }
+
+    // ボタン(シミュレーション結果へ)の非活性化
+    const [disable, setDisable] = useState(true);
 
     return (
         <>
@@ -92,7 +92,7 @@ export const InputArea = () => {
                         </FormControl>
                         <FormControl isRequired>
                             <FormLabel htmlFor='first-name'>1日の使用時間（時間）</FormLabel>
-                                <NumberInput step={0.1} defaultValue={0} min={0} max={24} value={time} onChange={handleChange2}>
+                                <NumberInput step={0.1} defaultValue={0} min={0} max={24} value={time} onChange={handleChangeTime}>
                                     <NumberInputField />
                                         <NumberInputStepper>
                                             <NumberIncrementStepper />
@@ -126,7 +126,7 @@ export const InputArea = () => {
                                 <option value="28.49">沖縄電力</option>
                                 <option value="25.35">東京ガス</option>
                                 <option value="25.3">大阪ガス</option>
-                                <option value="26.1円">全国平均(電力10社平均)</option>
+                                <option value="26.1">全国平均(電力10社平均)</option>
                             </Select>
                         </FormControl>
                         <FormControl isRequired>
@@ -139,7 +139,7 @@ export const InputArea = () => {
                                         </NumberInputStepper>
                                 </NumberInput>
                         </FormControl>
-                        <PrimaryButton  onClick={onClickToResult}>シミュレーション結果へ</PrimaryButton>
+                        <PrimaryButton  onClick={onClickToResult} disable={disable}>シミュレーション結果へ</PrimaryButton>
                     </Stack>
                 </Box>
                 <Box position="container" >

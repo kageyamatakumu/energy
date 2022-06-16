@@ -3,7 +3,7 @@ import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
 import { Header } from './components/organisms/layout/Header';
-import { Router } from './components/router/Router';
+import { Router } from './router/Router';
 import { ElectricBillProvider } from './providers/ElectricBillProvider';
 import { SelectHourProvider } from './providers/SelectHourProvider';
 import { SelectPeriodProvider } from './providers/SelectPeriodProvider';
