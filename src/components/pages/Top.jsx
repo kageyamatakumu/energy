@@ -4,7 +4,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { PrimaryButton } from '../atoms/button/PrimaryButton';
 import main from '../../images/top.jpg';
-import { TopModail } from '../organisms/Mordal/TopModail';
+import { TopModail } from '../organisms/Modal/TopModail';
 import { ModalButton } from '../atoms/button/ModalButton';
 
 
@@ -16,9 +16,7 @@ export const Top = () => {
         history.push('/input')
     }, [])
 
-    const onClickSite = () => {
-        onOpen();
-    }
+    const onClickSite = () => onOpen();
 
     return (
         <>
