@@ -13,7 +13,7 @@ import { Center, Flex, Stack, Image, useDisclosure, Button} from '@chakra-ui/rea
 import  money from '../../images/Money.png'
 import { PrimaryButton } from '../atoms/button/PrimaryButton';
 import { useHistory } from 'react-router-dom';
-import { LedModal } from '../organisms/Mordal/LedModal';
+import { LedModal } from '../organisms/Modal/LedModal';
 import { ModalButton } from '../atoms/button/ModalButton';
 
 Chart.register(...registerables)
@@ -33,7 +33,7 @@ export const Led = memo(() => {
     useEffect(() => {
             if(power >= 80){
                 setPower(12.5)
-            }else if(60 <= power && power < 80){
+            }else if(power >= 60 && power < 80){
                 setPower(4.9)
             } else{
                 setPower(4)
@@ -75,13 +75,9 @@ export const Led = memo(() => {
         ],
     };
 
-    const onCkickResult = () => {
-        history.push('/result')
-    }
+    const onCkickResult = () => history.push('/result')
 
-    const onClickSite = () => {
-        onOpen();
-    }
+    const onClickSite = () => onOpen();
 
     return (
         <>
